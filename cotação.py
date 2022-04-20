@@ -13,8 +13,8 @@ req = req.json()
 #data recebe o dicionário json recebido atravez da requisição e armazena os parametros "USDBRL" e "create_date"
 
 dolar = req['USDBRL']['bid']
-data=req['USDBRL']['create_date']
-print(dolar, data)
+data = req['USDBRL']['create_date']
+print(dolar, data) #print usado apenas para teste 
 
 
 
@@ -31,9 +31,9 @@ client = Client(account_sid, auth_token)
 
 #bloco de codigo usado para enviar os dados obtido na api de requisição
 message = client.messages.create(
-    to="+5511991306070",
-    from_="+18304686152",
-    body=f"  cotação do dolar na data e hora de  {data} é:  {dolar} ")
+    to= "+5511991306070",
+    from_= "+18304686152",
+    body= f"  cotação do dolar na data e hora de  {data} é:  {dolar} ")
 
 print(message.sid)
 
